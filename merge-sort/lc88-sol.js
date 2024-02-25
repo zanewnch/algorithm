@@ -12,7 +12,7 @@
 
 這樣的寫法可以確保合併後的 nums1 仍然保持有序，並且避免使用額外的空間。這樣的合併方式在時間和空間複雜度上都是最優的。
 */
-var merge = function (a, m, b, n) {
+let merge = function (a, m, b, n) {
     let i = m - 1;
     let j = n - 1;
     let k = m + n - 1;
@@ -29,3 +29,6 @@ var merge = function (a, m, b, n) {
       a[k--] = b[j--];
     }
   };
+
+
+
