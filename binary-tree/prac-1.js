@@ -1,53 +1,53 @@
 class TreeNode {
-  constructor(left, value, right) {
-    this.left = left;
+  constructor(value, left = null, right = null) {
     this.value = value;
+    this.left = left;
     this.right = right;
   }
 }
 
-class BinaryTree {
-  constructor(value) {
-    this.root = new TreeNode(null, value, null);
-  }
- // !有bug 沒有順利run出來 需要改
-  preOrder(treeNode) {
-    // root-left-right
-
-    if (treeNode === null) {
+class BinaryTreeTraverse {
+  preOrder(node) {
+    // 假設此時的node 剛好是leaf, 所以他的左右子葉都會是null
+    // 所以當 this.preOrder(node.left); 其實就是把null 丟進function
+    // 所以才會是檢驗node === null, 而不是node.value === null
+    if (node === null) {
       return;
     }
-    console.log(treeNode.value);
-    this.preOrder(treeNode.left);
-    this.preOrder(treeNode.right);
+
+    console.log(node.value);
+    this.preOrder(node.left);
+    this.preOrder(node.right);
   }
 
-  inOrder(treeNode) {
+  inOrder(node){
     // left-root-right
-    if (treeNode.value === null) {
-      return;
+    if (node === null){
+        return;
     }
 
-    this.inOrder(treeNode.left);
-    console.log(treeNode.value);
-    this.inOrder(treeNode.right);
+    this.inOrder(node.left);
+    console.log(node.value);
+    this.inOrder(node.right);
   }
 
-  postOrder(treeNode) {
+  postOrder(node){
     // left-right-root
-
-    if (treeNode.value === null) {
-      return;
+    if(node===null){
+        return;
     }
-
-    this.postOrder(treeNode.left);
-    this.postOrder(treeNode.right);
-    console.log(treeNode.value);
+    this.postOrder(node.left)
+    this.postOrder(node.right)
+    console.log(node.value)
   }
 }
 
-const result = new BinaryTree(
-    new TreeNode(new TreeNode(null,4,null),2,null),
-     1,
-     new TreeNode(new TreeNode(null,5,null),3,new TreeNode(null,6,null)));
-result.preOrder(result.root);
+let root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.left.left = new TreeNode(4);
+root.right = new TreeNode(3);
+root.right.left = new TreeNode(5);
+root.right.right = new TreeNode(6);
+
+const binaryTreeTraverse = new BinaryTreeTraverse();
+binaryTreeTraverse.preOrder(root);
