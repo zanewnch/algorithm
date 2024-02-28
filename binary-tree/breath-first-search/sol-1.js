@@ -6,6 +6,7 @@ class Node {
     }
   }
   // breath-first-search should use queue to solve
+  // why using queue: because need to retrieve the first data of tree, so need to use queue.
   function bfs(root) {
     let queue = []; // initialize a queue
     let result = []; // array to store the result
