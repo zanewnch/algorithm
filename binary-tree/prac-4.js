@@ -40,18 +40,23 @@ const rootNode = arrayToTreeNode(root);
 
 
 const inOrderTraversal = (root)=>{
-    let result = [];
+    // inOrder:left-root-right
+
+    // output an array, so need to create the temp array to store the result element
+
+    let result = []
     helper(root,result);
     return result;
+
+
 }
 
+const helper = (node,resultArray)=>{
+    if(node===null) return;
 
-const helper = (node,result)=>{
-  if(node === null) return;
-  helper(node.left,result);
-  result.push(node.val);
-  helper(node.right,result);
+    helper(node.left,resultArray);
+    resultArray.push(node.val);
+    helper(node.right,resultArray);
 }
-
 console.log(rootNode)
 console.log(inOrderTraversal(rootNode));
