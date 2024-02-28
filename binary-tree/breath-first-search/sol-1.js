@@ -19,6 +19,7 @@ class Node {
       result.push(currentNode.value); // add the value of the node to the result array
   
       // enqueue all children of the current node
+      // because the traversal is from left to right, so add the left node at first then add right node.
       if(currentNode.left) {
         queue.push(currentNode.left);
       }
