@@ -26,3 +26,6 @@
 
 hash table
 graph
+
+
+重點是邏輯的連結 based on question
