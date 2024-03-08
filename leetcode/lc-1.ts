@@ -1,6 +1,7 @@
 function twoSum(nums: number[], target: number): number[] | null {
     // 在js 可以用object 來實現hash table
     const hashTable: { [key: number]: number } = {};
+    
 
     // for loop run each element in nums
     for (let i = 0; i < nums.length; i++) {
