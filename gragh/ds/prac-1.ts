@@ -102,3 +102,5 @@ const bfsPrac1 = (vertex:Vertex):(string|number)[]=>{
 
 
 console.log(bfs(a)); // Call the bfs function with vertex 'a' as the starting point
+
+// !add and delete vertex
