@@ -1,4 +1,4 @@
-package algorithm.gragh.ds;
+package algorithm.graph.ds;
 
 import java.util.List;
 

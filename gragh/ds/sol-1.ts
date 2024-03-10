@@ -1,3 +1,9 @@
+// directed
+// undirected
+// weighted
+// path 
+// cycle(edge points to the same vertex)
+
 class Vertex {
     name: string;
     edges: Edge[];
@@ -39,16 +45,3 @@ e.edges = [];
 f.edges = [];
 g.edges = [];
 
-
-// 
-let graph = new Map<Vertex, Array<{vertex: Vertex, weight: number}>>();
-
-graph.set(a, [{vertex: b, weight: 5}, {vertex: c, weight: 3}]);
-graph.set(b, [{vertex: d, weight: 6}, {vertex: e, weight: 2}]);
-graph.set(c, [{vertex: f, weight: 4}]);
-graph.set(d, [{vertex: g, weight: 1}]);
-graph.set(e, []);
-graph.set(f, []);
-graph.set(g, []);
-
-console.log(graph);
